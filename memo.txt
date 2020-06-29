@@ -1,1 +1,1 @@
-Clear All 버튼 JS만들기
+CSS 꾸미기
