@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checklist</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
 </head>
 <body>
-    <header class="pg_title">
-        <h1 class="pg_title_txt">오늘의 할 일</h1>
-    </header>
-    <section class="pg_body">
-        <div class="todoBtns">
-
-        </div>
-        <div class="addBtnDiv">
-            <input class="addBtn" type="button" value="(+) Add"></input>
-        </div>
-    </section>
-    <script src="app.js"></script>
+  <header class="main-title">
+    <h1 class="main-title-txt">오늘의 할 일</h1>
+  </header>
+  <section class="main-body">
+    <div class="checklists-container">
+      <ul class="font-helvetica js-checklists"></ul>
+    </div>
+    <form class="checklist-form js-checklist-form">
+      <input type="input" class="checklist-input font-helvetica js-checklist-input" />
+    </form>
+  </section>
+  <footer class="btns-container">
+    <input class="add-btn long-btn font-helvetica js-add-btn" type="button" value="(+) Add" />
+    <input class="cancel-btn long-btn font-helvetica js-cancel-btn" type="button" value="(X) Cancel" />
+    <input class="clear-btn long-btn font-helvetica js-clear-btn" type="button" value="(V) Clear" />
+  </footer>
+  <script src="app.js"></script>
 </body>
 </html>

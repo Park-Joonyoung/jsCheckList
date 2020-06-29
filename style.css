@@ -1,7 +1,7 @@
 @import "reset.css";
 
 body {
-  background-color: #f6f9fc;
+  background-color: #f5f5dc;
   font-family: "Nanum Gothic", sans-serif;
   display: flex;
   flex-direction: column;
@@ -9,8 +9,110 @@ body {
   padding: 50px 0px;
 }
 
-.pg_title {
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
   padding-top: 50px;
   padding-bottom: 150px;
   font-size: 36px;
+}
+
+.checklists-container {
+  margin-bottom: 25px;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width: 600px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.checklist-txt {
+  font-size: 18px;
+  padding: 0 25px;
+  color: #2c2c2c;
+}
+
+.checklist-form {
+  padding-bottom: 25px;
+}
+
+.checklist-input {
+  display: none;
+  width: 600px;
+  height: 25px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  background: transparent;
+  border-style: none none solid none;
+  outline: none;
+}
+
+.long-btn {
+  width: 150px;
+  height: 50px;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+  outline: 2px dotted #ffffff;
+  outline-offset: -5px;
+  cursor: pointer;
+}
+
+.square-btn {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.3);
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.check-btn {
+  margin-left: 25px;
+  color: #2c2c2c;
+  font-weight: 300;
+}
+
+.del-btn {
+  position: absolute;
+  right: 25px;
+  background-color: #ff7675;
+  color: #ffffff;
+}
+
+.add-btn {
+  background-color: #00bb00;
+}
+
+.cancel-btn {
+  display: none;
+  background-color: #ff7675;
+}
+
+.clear-btn {
+  background-color: #0984e3;
+}
+
+.font-helvetica {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+  margin-top: 25px;
 }
