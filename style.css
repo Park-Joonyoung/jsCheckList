@@ -1,28 +1,36 @@
 @import "reset.css";
 
 body {
-  background-color: #f5f5dc;
-  font-family: "Nanum Gothic", sans-serif;
+  background-color: rgb(207, 216, 220);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 0px;
 }
 
-section {
+.section-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 600px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.15);
+  padding: 75px;
 }
 
 .main-title {
   padding-top: 50px;
-  padding-bottom: 150px;
-  font-size: 36px;
+  padding-bottom: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  justify-content: left;
 }
 
 .checklists-container {
   margin-bottom: 25px;
+  width: inherit;
 }
 
 .checklist {
@@ -30,11 +38,8 @@ section {
   flex-direction: row;
   align-items: center;
   position: relative;
-  width: 600px;
+  width: inherit;
   height: 50px;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.3);
 }
 
 .checklist-txt {
@@ -45,51 +50,56 @@ section {
 
 .checklist-form {
   padding-bottom: 25px;
+  width: inherit;
 }
 
 .checklist-input {
   display: none;
-  width: 600px;
+  width: inherit;
   height: 25px;
   padding: 5px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 15px;
+  padding-bottom: 10px;
   text-align: center;
   background: transparent;
   border-style: none none solid none;
+  border-color: rgba(0, 0, 0, 0.3);
   outline: none;
+  box-sizing: border-box;
 }
 
 .long-btn {
   width: 150px;
   height: 50px;
   border: none;
+  border-radius: 10px;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
   color: #ffffff;
-  outline: 2px dotted #ffffff;
-  outline-offset: -5px;
   cursor: pointer;
 }
 
-.square-btn {
+.check-btn {
   width: 25px;
   height: 25px;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12.5px;
   outline: none;
   cursor: pointer;
-  font-size: 18px;
-}
-
-.check-btn {
   margin-left: 25px;
-  color: #2c2c2c;
+  background-color: rgb(255, 255, 255);
   font-weight: 300;
 }
 
 .del-btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
   position: absolute;
   right: 25px;
   background-color: #ff7675;
@@ -97,22 +107,25 @@ section {
 }
 
 .add-btn {
-  background-color: #00bb00;
+  background-color: rgba(0, 187, 0, 0.75);
+  outline: none;
 }
 
 .cancel-btn {
   display: none;
-  background-color: #ff7675;
+  background-color: rgba(255, 118, 117, 0.9);
+  outline: none;
 }
 
 .clear-btn {
-  background-color: #0984e3;
+  background-color: rgba(9, 132, 227, 0.8);
+  outline: none;
+}
+
+.btns-container {
+  margin-top: 25px;
 }
 
 .font-helvetica {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-footer {
-  margin-top: 25px;
 }

@@ -9,6 +9,9 @@ const PAINT_ADDBTN = 0;
 const PAINT_CANCELBTN = 1;
 const PAINT_INPUT = 0;
 const HIDE_INPUT = 1;
+const INITIAL_CHECKBTN_COLOR = "rgb(255, 255, 255)";
+const MODIFIED_CHECKBTN_COLOR = "rgb(170, 170, 170)";
+const INITIAL_LINETHROUGH = false;
 
 const FIRST_ID = 1;
 
@@ -37,7 +40,7 @@ function changeAddCancelBtn(value) {
   }
 }
 
-function paintCheckList(value) {
+function paintCheckList(value, lineThrough) {
   const li = document.createElement("li");
   const newId = checkListsData.length + 1;
   const checkBtn = document.createElement("button");
@@ -47,14 +50,19 @@ function paintCheckList(value) {
   li.classList.add("checklist");
   li.id = newId;
   checkBtn.classList.add("check-btn");
-  checkBtn.classList.add("square-btn");
   checkBtn.addEventListener("click", handleCheckBtnClick);
   span.classList.add("checklist-txt");
   span.innerText = value;
   delBtn.classList.add("del-btn");
-  delBtn.classList.add("square-btn");
   delBtn.addEventListener("click", handleDeleteBtnClick);
   delBtn.innerText = "X";
+
+  if (lineThrough == false) {
+    checkBtn.style.backgroundColor = INITIAL_CHECKBTN_COLOR;
+  } else {
+    checkBtn.style.backgroundColor = MODIFIED_CHECKBTN_COLOR;
+    li.style.textDecoration = "line-through";
+  }
 
   li.appendChild(checkBtn);
   li.appendChild(span);
@@ -64,7 +72,7 @@ function paintCheckList(value) {
   const checkListObj = {};
   checkListObj.value = value;
   checkListObj.id = newId;
-  checkListObj.lineThrough = false;
+  checkListObj.lineThrough = lineThrough;
   checkListsData.push(checkListObj);
   savecheckListsData();
 }
@@ -75,7 +83,7 @@ function handleSubmit(event) {
   changeAddCancelBtn(PAINT_ADDBTN);
   const currentValue = checkListInput.value;
   checkListInput.value = "";
-  paintCheckList(currentValue);
+  paintCheckList(currentValue, INITIAL_LINETHROUGH);
 }
 
 function handleDeleteBtnClick(event) {
@@ -96,20 +104,20 @@ function handleDeleteBtnClick(event) {
 
 function handleCheckBtnClick(event) {
   const btn = event.target;
-  const btnValue = btn.innerText;
   const li = btn.parentNode;
   const span = li.children[1];
   const currentId = li.id;
 
-  if (btnValue == "V") {
-    btn.innerText = "";
+  if (btn.style.backgroundColor == MODIFIED_CHECKBTN_COLOR) {
+    btn.style.backgroundColor = INITIAL_CHECKBTN_COLOR;
     span.style.textDecoration = "none";
     checkListsData[currentId - 1].lineThrough = false;
   } else {
-    btn.innerText = "V";
+    btn.style.backgroundColor = MODIFIED_CHECKBTN_COLOR;
     span.style.textDecoration = "line-through";
     checkListsData[currentId - 1].lineThrough = true;
   }
+
   savecheckListsData();
 }
 
@@ -144,7 +152,7 @@ function loadCheckListData() {
   if (loadedCheckListData !== null) {
     const parsedCheckListData = JSON.parse(loadedCheckListData);
     parsedCheckListData.forEach(function (checkList) {
-      paintCheckList(checkList.value);
+      paintCheckList(checkList.value, checkList.lineThrough);
     });
   }
 }
