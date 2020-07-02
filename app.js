@@ -24,9 +24,9 @@ function savecheckListsData() {
 
 function changeInput(value) {
   if (value == PAINT_INPUT) {
-    checkListInput.style.display = "block";
+    checkListForm.style.display = "flex";
   } else {
-    checkListInput.style.display = "none";
+    checkListForm.style.display = "none";
   }
 }
 

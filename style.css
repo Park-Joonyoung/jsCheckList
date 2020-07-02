@@ -6,31 +6,40 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 50px 0px;
+  width: 100%;
 }
 
-.section-container {
+.main-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
+}
+
+.section-container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #ffffff;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.15);
-  padding: 75px;
+  padding: 75px 0;
 }
 
 .main-title {
+  width: 75%;
   padding-top: 50px;
   padding-bottom: 5px;
+  position: sticky;
   font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
-  justify-content: left;
 }
 
 .checklists-container {
   margin-bottom: 25px;
-  width: inherit;
+  width: 75%;
 }
 
 .checklist {
@@ -51,11 +60,12 @@ body {
 .checklist-form {
   padding-bottom: 25px;
   width: inherit;
+  display: none;
+  justify-content: center;
 }
 
 .checklist-input {
-  display: none;
-  width: inherit;
+  width: 75%;
   height: 25px;
   padding: 5px;
   font-size: 15px;
@@ -128,4 +138,15 @@ body {
 
 .font-helvetica {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (min-width: 750px) {
+  .section-container {
+    width: 750px;
+  }
+
+  .main-title {
+    width: 750px;
+    position: sticky;
+  }
 }
