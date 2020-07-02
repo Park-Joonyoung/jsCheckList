@@ -10,14 +10,24 @@ body {
 }
 
 .main-container {
-  width: 100%;
+  width: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.main-title {
+  width: 750px;
+  padding-top: 50px;
+  padding-bottom: 5px;
+  position: sticky;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .section-container {
-  width: 75%;
+  width: 750px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,16 +35,6 @@ body {
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.15);
   padding: 75px 0;
-}
-
-.main-title {
-  width: 75%;
-  padding-top: 50px;
-  padding-bottom: 5px;
-  position: sticky;
-  font-size: 24px;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .checklists-container {
@@ -49,23 +49,26 @@ body {
   position: relative;
   width: inherit;
   height: 50px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .checklist-txt {
   font-size: 18px;
-  padding: 0 25px;
+  margin-left: 25px;
+  margin-right: 50px;
   color: #2c2c2c;
 }
 
 .checklist-form {
   padding-bottom: 25px;
-  width: inherit;
+  width: 75%;
   display: none;
   justify-content: center;
 }
 
 .checklist-input {
-  width: 75%;
+  width: 100%;
   height: 25px;
   padding: 5px;
   font-size: 15px;
@@ -91,14 +94,13 @@ body {
 }
 
 .check-btn {
-  width: 25px;
+  min-width: 25px;
   height: 25px;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.3);
   border-radius: 12.5px;
   outline: none;
   cursor: pointer;
-  margin-left: 25px;
   background-color: rgb(255, 255, 255);
   font-weight: 300;
 }
@@ -111,42 +113,49 @@ body {
   cursor: pointer;
   font-size: 18px;
   position: absolute;
-  right: 25px;
+  right: 0px;
   background-color: #ff7675;
   color: #ffffff;
+}
+
+.btns-container {
+  margin-top: 25px;
+  width: inherit;
+  display: flex;
+  justify-content: center;
 }
 
 .add-btn {
   background-color: rgba(0, 187, 0, 0.75);
   outline: none;
+  margin-right: 5px;
 }
 
 .cancel-btn {
   display: none;
   background-color: rgba(255, 118, 117, 0.9);
   outline: none;
+  margin-right: 5px;
 }
 
 .clear-btn {
   background-color: rgba(9, 132, 227, 0.8);
   outline: none;
-}
-
-.btns-container {
-  margin-top: 25px;
+  margin-left: 5px;
 }
 
 .font-helvetica {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (min-width: 750px) {
+@media (max-width: 750px) {
   .section-container {
-    width: 750px;
+    width: 100%;
   }
 
   .main-title {
-    width: 750px;
+    width: 100%;
+    margin-left: 5px;
     position: sticky;
   }
 }
